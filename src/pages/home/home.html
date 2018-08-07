@@ -7,8 +7,9 @@
 </ion-header>
 
 <ion-content padding>
-  Welcome, my english friend.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-calendar [(ngModel)]="dateRange"
+              [options]="optionsRange"
+              [type]="type"
+              [format]="'YYYY-MM-DD'">
+</ion-calendar>
 </ion-content>
