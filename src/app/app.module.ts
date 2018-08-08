@@ -56,7 +56,7 @@ export class MyErrorHandler implements ErrorHandler {
     IonicModule.forRoot(MyApp),
     CalendarModule,
     NativeHttpModule,
-    SwiperModule
+    SwiperModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

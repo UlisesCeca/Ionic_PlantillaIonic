@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
 import { ProUpdateProvider } from '../../providers/pro-update/pro-update'
 
 @IonicPage()
@@ -9,14 +9,6 @@ import { ProUpdateProvider } from '../../providers/pro-update/pro-update'
 })
 export class ProUpdatePage {
 
-  constructor(private navCtrl: NavController,
-              private navParams: NavParams,
-              public pro: ProUpdateProvider
-            ) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProUpdatePage');
-  }
+  constructor(public pro: ProUpdateProvider) {}
 
 }
