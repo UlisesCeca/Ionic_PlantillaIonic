@@ -14,6 +14,7 @@ export class ProUpdateProvider {
   }
 
   public async update(): Promise<any> {
+    
     let nav = this.app.getActiveNav();
     const update = await Pro.deploy.checkForUpdate();
 
@@ -31,6 +32,7 @@ export class ProUpdateProvider {
       this.progress = 0;
       this.message = "Actualizando..."
       await Pro.deploy.reloadApp();
+      console.log(await Pro.deploy.getConfiguration())
     } else {
       nav.insert(0, PAGES.HOME);
     }
