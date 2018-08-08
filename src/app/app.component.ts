@@ -19,6 +19,9 @@ export class MyApp {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.pro.getConfiguration().then(info => {
+        console.log("Mierda")
+        console.log(info)})
       if(this.platform.is('mobileweb') || this.platform.is('core')) {
         this.setRootPage();
       } else {

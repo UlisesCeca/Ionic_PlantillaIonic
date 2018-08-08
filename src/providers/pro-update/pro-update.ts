@@ -34,7 +34,6 @@ export class ProUpdateProvider {
     } else {
       nav.insert(0, PAGES.HOME);
     }
-    console.log(await this.getConfiguration());
   }
 
   public async getConfiguration(): Promise<ICurrentConfig> {
