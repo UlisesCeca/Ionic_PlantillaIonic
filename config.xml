@@ -86,6 +86,9 @@
         <variable name="CHANNEL_NAME" value="Master" />
         <variable name="UPDATE_METHOD" value="none" />
         <variable name="MAX_STORE" value="2" />
+        <variable name="WARN_DEBUG" value="false" />
+        <variable name="UPDATE_API" value="https://api.ionicjs.com" />
+        <variable name="MIN_BACKGROUND_DURATION" value="30" />
     </plugin>
     <engine name="android" spec="~7.0.0" />
     <plugin name="cordova-plugin-advanced-http" spec="^1.11.1" />
