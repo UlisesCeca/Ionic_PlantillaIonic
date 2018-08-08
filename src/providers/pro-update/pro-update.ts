@@ -9,8 +9,7 @@ export class ProUpdateProvider {
   public message: string
   public progress: number;
 
-  public constructor(private app: App,
-                    private pro: Pro) {
+  public constructor(private app: App) {
     this.progress = 0;
   }
 
@@ -35,12 +34,12 @@ export class ProUpdateProvider {
     } else {
       nav.insert(0, PAGES.HOME);
     }
-    //console.log(await this.getConfiguration());
+    console.log(await this.getConfiguration());
   }
 
-  /*public async getConfiguration(): Promise<ICurrentConfig> {
+  public async getConfiguration(): Promise<ICurrentConfig> {
     return Pro.deploy.getConfiguration();
-  }*/
+  }
 
 
 }
