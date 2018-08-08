@@ -8,6 +8,5 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HomePage {
 
-  public constructor(private navCtrl: NavController) {
-  }
+  public constructor(private navCtrl: NavController) {}
 }
