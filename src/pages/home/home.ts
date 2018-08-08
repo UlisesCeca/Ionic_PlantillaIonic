@@ -11,6 +11,5 @@ export class HomePage {
 
   public constructor(private navCtrl: NavController) {
     Pro.deploy.getConfiguration().then(info => console.log(info))
-  
-}
+  }
 }
