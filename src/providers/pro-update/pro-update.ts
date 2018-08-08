@@ -20,13 +20,13 @@ export class ProUpdateProvider {
     if(update.available) {
       nav.insert(0, PAGES.UPDATE);
       this.message = "Actualizando aplicación";
-      await Pro.deploy.downloadUpdate((progress: number) => {
-        this.progress += progress;
+      await Pro.deploy.downloadUpdate((progress) => {
+        this.progress = progress;
       });
       this.progress = 0;
       this.message = "Aplicando actualización";
       await Pro.deploy.extractUpdate((progress) => {
-        this.progress += progress;
+        this.progress = progress;
       })
       this.progress = 0;
       await Pro.deploy.reloadApp();
