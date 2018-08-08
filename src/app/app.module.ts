@@ -14,6 +14,7 @@ import { CalendarModule } from "ulises-ionic-calendar-temp";
 import { NativeHttpModule, NativeHttpBackend, NativeHttpFallback } from 'ulises-ionic-native-http-connection-backend-temp';
 
 import { SwiperModule, SWIPER_CONFIG, SwiperConfigInterface } from 'ulises-ionic-angular-swipper-temp';
+import { ProUpdateProvider } from '../providers/pro-update/pro-update';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -68,7 +69,8 @@ export class MyErrorHandler implements ErrorHandler {
     IonicErrorHandler,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: HttpBackend, useClass: NativeHttpFallback, deps: [Platform, NativeHttpBackend, HttpXhrBackend]},
-    {provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG}
+    {provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG},
+    ProUpdateProvider
   ]
 })
 export class AppModule {}
