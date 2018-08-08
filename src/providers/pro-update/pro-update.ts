@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Pro } from '../../../node_modules/@ionic/pro';
+import { Pro } from '@ionic/pro';
 import { App } from "ionic-angular";
 import { PAGES } from '../../pages/pages';
 
@@ -9,7 +9,8 @@ export class ProUpdateProvider {
   public message: string
   public progress: number;
 
-  public constructor(private app: App) {
+  public constructor(private app: App,
+                    private pro: Pro) {
     this.progress = 0;
   }
 
@@ -29,10 +30,16 @@ export class ProUpdateProvider {
         this.progress = progress;
       })
       this.progress = 0;
+      this.message = "Actualizando..."
       await Pro.deploy.reloadApp();
     } else {
       nav.insert(0, PAGES.HOME);
     }
+    console.log(await this.getConfiguration());
+  }
+
+  public async getConfiguration(): Promise<ICurrentConfig> {
+    return Pro.deploy.getConfiguration();
   }
 
 
